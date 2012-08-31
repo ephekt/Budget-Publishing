@@ -47,86 +47,86 @@ of their style.
 So far, the default macros that need to be defined (all for tables) are as
 follows. All should take 1 argument unless otherwise indicated
 
-*Not so much a macro but something to display in a table when no information is
+Not so much a macro but something to display in a table when no information is
 found for a particular row. Should take 0 arguments. For example
 \newcommand{\noinfo}[0]{-} 
 
     \noinfo
 
-*Macro for formatting normal numbers, applied to any numerical rows in a
+Macro for formatting normal numbers, applied to any numerical rows in a
  table or column unless specifically overridden.
     
     \num
 
-*Macro for fromatting and displaying percentages, applied by default to any
+Macro for fromatting and displaying percentages, applied by default to any
  diff row that outputs a percentage. For example
 
     \newcommand{\percentage}[1]{\numprint{#1}\%} 
     \percentage
 
-*Macro applied to the text in the top left corner of a table (that has both a
+Macro applied to the text in the top left corner of a table (that has both a
 title column and row
 
     \tableTitleMacro
 
-* Macro applied to the entire column title row
+Macro applied to the entire column title row
 
     \colTitleRow
 
-* Macro applied to each item in the column title row
+Macro applied to each item in the column title row
 
     \colTitleItem
 
-* Default macro applied to each row in every table
+Default macro applied to each row in every table
 
     \row
 
-* Default macro applied to every regular item in a table
+Default macro applied to every regular item in a table
 
     \item
 
-* Default macro applied to every row title
+Default macro applied to every row title
 
     \rowTitle
 
-* Default macro applied to a sum of an entire table
+Default macro applied to a sum of an entire table
 
     \sumRow
 
-* Default macro applied to a sum of an entire subtable
+Default macro applied to a sum of an entire subtable
 
     \subSumRow
 
-* Default macro applied to any other sum row
+Default macro applied to any other sum row
 
     \subSubSumRow
 
-* Default macro applied to the items of a sum of an entire table
+Default macro applied to the items of a sum of an entire table
 
     \sumItem
 
-* Default macro applied to the items of a sum of an entire subtable
+Default macro applied to the items of a sum of an entire subtable
 
     \subSumItem
 
-* Default macro applied to the items of any other sum
+Default macro applied to the items of any other sum
 
     \subSubSumItem
 
-* Similar to the above, except apply to the row titles of sums
+Similar to the above, except apply to the row titles of sums
 
     \sumTitle
     \subSumTitle
     \subSubSumTitle
 
-* Same as sum macros, except for diff rows. Doesn't differentiate between levels
+Same as sum macros, except for diff rows. Doesn't differentiate between levels
  like sums do.
      
      \diffRow
      \diffItem
      \diffTitle
 
-* Default macro applied to the title of a subtable (which is a floating title
+Default macro applied to the title of a subtable (which is a floating title
 above the actual table.
 
     \subTableTitle
@@ -156,18 +156,16 @@ here, the report body will be constructed. A 'part' corresponds to a
 section in the document initialized with LaTeX \part. It can have 3
 sub-attributes: 
 
-#### title
+* title
 Defines the title of the section fed to the
 LaTeX \part command 
-
-#### section
+* section
 Defines sections within parts. Sections are exactly like parts
 in content, except they use the LaTeX /section command. Within sections
 there can be subsections (which can in turn contain subsubsections,
 etc.). By default LaTeX only supports down to /subsubsection, so any
 further divisions will have to be defined in the header
-
-#### content
+* content
 Defines content that goes at the beginning of a part that does
 not belong to a subsection (or, in the event of a leaf
 part/section/subsection/etc., defines the content of that
@@ -247,7 +245,7 @@ no single parameter is mandatory. Rather, sometimes one attribute assumes
 others are given. I'll do my best to indicate those as clearly as possible
 
 ##### Optional Attributes:
-*src: If the table is at least partially custom, this determines
+* src: If the table is at least partially custom, this determines
 the src cvs file that data is read from. This default can be
 overridden in lower levels (subtables, rows) by redeclaring the
 src field, as will be described later
@@ -381,9 +379,11 @@ have several possible attributes:
                inherit their traits. This maybe should be fixed in a
                future version
                          
+                         
 * sumcol: Specifies whether the last column should be a sum of all
        other columns.
     * sumcoltitle: Self explanatory. Total by default
+      
       
 * columns: Much like rows, this allows manual specification of
        columns in the table. Many of the arguments are the same, with row
@@ -427,6 +427,7 @@ instead of 'title' 'content' and all that, just give the class attributes,
 which will be detected and take precedence. The attributes are as follows:
       
 * classname: The name of the class to instanciate
+
 * classvalues: a list of values to replace the *classvalue*s in
          the declaration with. Each element can be a list or a list of
          lists as neccessary, if it's supported in the definition
