@@ -20,6 +20,7 @@ The tool is invoked from the command line, and takes just one argument
      
      python budgetPublishing.py example.json
 
+## Configuration
 ### Document Header
 The tool requires a documentheader to be present in the repository that
 the tool is running in. This header is responsible for a few things
@@ -83,7 +84,7 @@ Default macro applied to each row in every table
 
 Default macro applied to every regular item in a table
 
-    \item
+    \tableItem
 
 Default macro applied to every row title
 
@@ -122,9 +123,9 @@ Similar to the above, except apply to the row titles of sums
 Same as sum macros, except for diff rows. Doesn't differentiate between levels
  like sums do.
      
-     \diffRow
-     \diffItem
-     \diffTitle
+    \diffRow
+    \diffItem
+    \diffTitle
 
 Default macro applied to the title of a subtable (which is a floating title
 above the actual table.
@@ -139,7 +140,7 @@ identity function, such as
 
 So that defaults can be defined as 
 
-    \sumtitle}[1]{\none{#1}}
+    \sumtitle[1]{\none{#1}}
 
 To explicitly state that the default is plaintext. Most defaults will
 likely just be plaintext
@@ -156,16 +157,16 @@ here, the report body will be constructed. A 'part' corresponds to a
 section in the document initialized with LaTeX \part. It can have 3
 sub-attributes: 
 
-* title
+* title:
 Defines the title of the section fed to the
 LaTeX \part command 
-* section
+* section:
 Defines sections within parts. Sections are exactly like parts
 in content, except they use the LaTeX /section command. Within sections
 there can be subsections (which can in turn contain subsubsections,
 etc.). By default LaTeX only supports down to /subsubsection, so any
 further divisions will have to be defined in the header
-* content
+* content:
 Defines content that goes at the beginning of a part that does
 not belong to a subsection (or, in the event of a leaf
 part/section/subsection/etc., defines the content of that
@@ -184,15 +185,15 @@ Contains only a "value" attribute. Simply outputs text. What we
 may want to do in the future is come up with some sort of markup language
 in order to support formatting specific words. Right now that kind of
 formatting can be accomplished my manually putting LaTeX commands (with
-the \ escaped to be \\) in the text.
+the \ escaped to be \\\\) in the text.
 
 #### list
 contains two attributes, a "value" which is a list of text string
-that will be put into the list, and an optional "listtype". List time is
+that will be put into the list, and an optional "listType". List time is
 the name of a defined macro used for the list bulleting. For example, one
 may have 
 
-    "listtype":"checkl"
+    "listType":"checkl"
     
 where checkl has been defined as follows:
 
@@ -305,7 +306,7 @@ src field, as will be described later
           row in a given row or subtable should be the sum of all other
           nonspecial rows.
           
-* sumRowMacro, sumItemMacro", sumTitleMacro: As with the
+* sumRowMacro, sumItemMacro, sumTitleMacro: As with the
           similar functionality for the other macros, these override the
           default macros for the automatically generated sum row (these do
           not effect other, manually specified sum rows)
@@ -317,7 +318,7 @@ src field, as will be described later
 * rows: rows contains a list of 'rows' for a given
 table/subtable, although subtables are also defined here. rows
 have several possible attributes:
-    * subtable: this is used for definining a subtable, and
+    * subTable: this is used for definining a subtable, and
       should be the only attribute in a given row. subtable
       itself is an object that defines many subattributes. I will
       not list these, as a subtable is very similar to a table,
@@ -347,7 +348,7 @@ have several possible attributes:
                      * diff: If a diff is x-y and a division
                                  x/y, this is the column number of x
                                 against: And this would be y
-                     * difftype: Right now, there are only two
+                     * diffType: Right now, there are only two
                                  types. 'numeric', which is the default and
                                  is exaclty what shown with the x y thing,
                                  and 'percent'. Percent for diff shows the
@@ -356,7 +357,7 @@ have several possible attributes:
                                  y.                           
     * custom: States that this row should read from a
                           cvs file. Takes the following optional arguments
-        * rownum: specifies which row in the cvs
+        * rowNum: specifies which row in the cvs
                                  file to read from. By default this is the
                                  number of the current row in the given
                                  subtable. As per usual, numbering starts
@@ -368,7 +369,7 @@ have several possible attributes:
                                   can also be used to specify a file
                                   unique to that row
     * title: determines the rowtitle of the given row
-    * numtype: This specifies what kind of numbers the elements
+    * numType: This specifies what kind of numbers the elements
                in this row are (e.g. monetary, FTE, etc). And
                simply add a macro tag matching the passed in string
                to be handled in LaTeX. The heuristic is that
@@ -380,9 +381,9 @@ have several possible attributes:
                future version
                          
                          
-* sumcol: Specifies whether the last column should be a sum of all
+* sumCol: Specifies whether the last column should be a sum of all
        other columns.
-    * sumcoltitle: Self explanatory. Total by default
+    * sumColTitle: Self explanatory. Total by default
       
       
 * columns: Much like rows, this allows manual specification of
@@ -414,9 +415,9 @@ have several possible attributes:
          write the objects within the class as though it were the contents
          of the level given in "level". The only difference is, any  
          place where the content of the class should be specifiable, you
-         write \*classvalue\*[x], where x is a list index starting from
+         write \*classValue\*[x], where x is a list index starting from
          0. If you want the classvalue to be a list, write
-         "\*classvalue\*[x]", and the outer quotation marks will be removed
+         "\*classValue\*[x]", and the outer quotation marks will be removed
          if the classvalue is a list. 
 
 Instanciating: Classes can be instanciated in two main ways, as a
@@ -426,9 +427,9 @@ attributes. To instanciate it as a section, when giving a section object,
 instead of 'title' 'content' and all that, just give the class attributes,
 which will be detected and take precedence. The attributes are as follows:
       
-* classname: The name of the class to instanciate
+* className: The name of the class to instanciate
 
-* classvalues: a list of values to replace the *classvalue*s in
+* classValues: a list of values to replace the *classvalue*s in
          the declaration with. Each element can be a list or a list of
          lists as neccessary, if it's supported in the definition
 
@@ -442,4 +443,115 @@ which will be detected and take precedence. The attributes are as follows:
 Classes are a little cumbersome right now, and a lot of that's tied to it
 having to be in the JSON format. This may be redesignable to great benifit.
 
-        
+## Development Notes
+A lot of the first round of this tool was written in a fairly unstructured
+way. Things make sense but they don't neccessarily flow, and there are
+lots of fairly large code blocks that do similar things in slightly
+different ways. For that reason among others, rewriting the core of this
+code for new development may not be such a bad idea, but I wanted to share
+some of the thought process which went into the current structure, which
+may not be neccessary to change.
+
+### Basic Structure
+The basic thoughts I had regarding the basic structuring of the documents
+was that it should leverage LaTeX as much as possible. Almost nothing
+should be built in, except basic structural components (text blocks,
+images, tables, etc). Rather, things should be macro based. The user is
+able to macro any basic component using built-in LaTeX functions to alter
+##the style. This leaves the system highly configurable, and uses the
+##Python more for glue that anything else
+
+### Functions
+There are lots of little structural things a user may want to have control
+over in the document. They may want to force a new page, switch from
+frontmatter to mainmatter, place the table of contents, or do various
+other things. Rather that hardcoding these functions as 'components', or
+some hardcoded subset of 'function', it made sense to put in a 'function'
+component that just literally calls a LaTeX function. 
+
+In some ways this leverages the front-end. It's not like the user is going
+to write {type:"function", value:"tableofcontents"}, theoretically they're
+going to go through a front-end tool, where the high level function 'Table
+of Contents' will be presented to them. This creates flexibility to alter
+what these presented functions are without changing the backend, and even
+have them differ between multiple tools using the same backend.
+
+### Classes
+One thing about city budgets is that for all the mess and clutter that
+occurs in large parts of them, about 70-80% is in a very structured (or at
+the very least repetitive) form. A good tool should allow for
+specification of certain budget elements such as a Department Ledger, and
+then allow the user to only enter the elements that change within that
+(department name, goals, etc.). The current method of doing it may be a
+little clumsy. It requires handwritten JSON and has a few hacks. A
+different abstraction for this would be befificial
+
+### Tables
+Tables are really the core of this project, and they aren't really
+finished, which is a problem. 
+
+#### What I did
+The problem with tables is that governments often want to do really random
+stuff and have stupid organization in tables. The idea of a good
+abstraction for how to specify tables is that we make doing well organized
+things as easy as possible, and allow for poorly specified things through
+heavy customizability but make that significantly more difficult. The way
+to do this is through healthy defaults.
+
+For example, if a user simply wants to place a table loaded in from a csv,
+they simply specify the table src and the table is automatically generated
+and placed for them. If they want to modify an individual row in the
+middle, have another row have different styling, do a percentage
+difference between two rows, or whatever other random thing, they can do
+that, but they have to put work into it.
+
+Another insight is the general organization of tables into
+subtables. Tables can be composed of arbitrarily nested subtables, and we
+have to allow for this. One nice thing about subtables is that they exist
+as a unit of summing within a larger subtable. For example, you can sum
+two subtables, but you will never sum one row within a given subtable with
+another row in another subtable. This allowed me to treat subtables in the
+same way that I treat rows, and just have a subtable be a different 'type'
+of row.
+
+#### Missing features and considerations
+Arguably the most important feature of this tool, and one that is missing
+at the time of writing this due to missing infrastructure, is the ability
+to generate a table from the database data. Using a combination of row and
+column specifiers, the user should be able to specify data cells that read
+in from the database. For example, the row specifier could be 'salary line
+items from the Administration Division of the Fire department' and the
+column specifier could be year 2012, and this would automatically fill in
+a cell with data. 
+
+Now, there may be situations where specifiers do not resolve to a single
+line item, but perhaps many. In these cases, they should probably be
+aggregated by a simple sum.
+
+I think an important feature will be the autogeneration of rows within a
+table or subtable (and potentially even the automatic generation of
+subtables). Here's what I mean by this: Say the user wants to lay out the
+total expenses of each department across the last 5 years. A user should
+be able to specify the years as columns, but for the rows, rather than
+specifying all of the departments, they should be able to only specify
+they want the total expensenses of each department, and have the table
+be created for them. 
+
+As for subtable autogenerating, that would be something along the lines of
+specifying "each expense line item matching 'taxes' for each department,
+where each department name becomes the title of a subtable listing the
+line items within it.
+
+It may be beneficial in a future edition to separate out the data side of
+the table and the format side. I saw them as pretty entertwined, which is
+why I didn't do this, but it may be possible with the right abstraction to
+have the main program only load from CSVs, and have another program be
+responsible for creating that csv (Frankenstein style, reading from the
+database, or otherwise).
+
+Another potentially missing feature of the current implementation is the
+ability to edit a cell after the fact. This feature is cumbersome and
+requires better front-end integration to understand how it'll work.
+
+### TODO
+case-insensitivity for reading in the JSON. Not neccessary but more robust

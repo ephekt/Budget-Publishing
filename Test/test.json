@@ -1,0 +1,110 @@
+{
+    "report":{
+        "classes":[
+                {"name":"department", "level":"section", "definition":
+                                {"title":"*classValue*[0]", "content":[
+                                          {"type":"img", "value":"*classValue*[0].png", "width":"6.5in"}
+                                          ], 
+                                 "subsections":[
+                                        {"title":"Department Description", "content":[
+                                                 {"type":"text", "value":"The *classValue*[0] Department's Mission is:"},
+                                                 {"type":"text", "macro":"centerit", "value":"*classValue*[1]"},
+                                                 {"type":"text", "value":"*classValue*[2]"}
+                                                 ]},
+                                        {"title":"Key Accomplishments", "content":[
+                                                 {"type":"list", "listType":"checkl", "value":"*classValue*[3]"},
+                                                 {"type":"function", "value":"newpage"}
+                                                 ]},
+                                        {"title":"Goals and Objectives", "subsubsections":[
+                                                        {"className":"goal", "amount":"*classValue*[4]", "classValues":"*classValue*[5]"}
+                                                        ]}
+                                                ]
+                                   }
+                 },
+                                                  
+                                                        
+                                                
+
+                                               
+                {"name":"goal", "level":"subsubsection", "definition":
+                                {"title":"Goal *classValue*[0]: *classValue*[1]", "titlemacro":"goalheader", "content":[
+                                          {"type":"text", "value":"Objective:"},
+                                          {"type":"list", "listType":"bulletl", "value":"*classValue*[2]"}
+                                          ]
+                                }
+                }                               
+        ],
+        "title": "Proposed Operating Budget",
+        "city": "Palo Alto",
+        "state": "California",
+        "coverimage":"PaloAltoCover.png",
+        "year":"2013",
+        "template": "PA Budget",
+        "authors":{
+            "mayor":"Yiaway Yeh",
+            "vice-mayor":"Greg Scharff",
+            "council":["1", "2", "3"],
+            "others" : [
+                       {"name": "James Keene", "title": "City Manager"},
+                       {"name": "Pamela Antil", "title": "Assistant City Manager/Chief Operating Officer"}]
+        },
+        "parts":[
+            {"title":"Introduction",  
+            "sections": [
+                {"title": "Transmittal Letter",
+                "subsections": [
+                     {"title": "",
+                      "content": [
+                             {"type":"text", "value":"April 30, 2012 \n\n To the Honorable Mayor and City Council: \n\n 2013 Fiscal Year Budget Transmittal \n\nDear Mayor and Council Members: \n\n", "macro":"itshape"}]},
+                                       
+                     {"title": "Introduction and Economic Backup",
+                      "content": [
+                             {"type":"text", "value": "Tonight, and in accordance with my responsibility as City Manager, I am pleased to submit the City of Palo Alto's Proposed Fiscal Year 2013 Operating Budget. As you know, since the fall of 2008, the City's General Fund has faced significant fiscal challenges.\n"},
+                             {"type": "list", "listType":"bulletl", "value": ["cost of living...", "implementing..."]}]},
+                      
+
+                     {"title": "Conclusion",
+                      "content": [
+                             {"type":"text", "value": "A considerable\\\\"},
+                             {"type":"img", "value":"JamesKeeneSig.png",
+                      "width":"2in", "height":"1in"},
+                             {"type":"text","value":"\\\\James Keene, City Manager"}]}
+                     ]                       
+                },
+                
+                {"title": "Budget Balancing Recommendations",
+                 "content": [
+                            {"type":"text", "value":"Eventually a table will go here"},          
+                            {"type":"table", "rowTitles":"true", "colTitles":"false", "rowTitleWidth":2, "src":"unittest.csv", "sumCol":"true", "sumRow":"true", "rows":[{"type":"sum", "rows":[2,3,4]}, {"type":"custom", "rowNum":2}, {"type":"custom","rowNum":3}, {"type":"diff", "diff":2, "against":3, "diffType":"percent"}, {"type":"custom", "itemMacro":"textbf", "rowNum":5}]}         
+                      ]}
+                        ]
+        },
+        {"title":"More involved tests", 
+        "sections":[
+                {"title":"dual column test", "content":[
+                       {"type":"table", "src":"unittest.csv", "sumRow":"true", "sumCol":"true", "macro":"figurebottom", "rows":[{"subTable":{"sumRow":"true", "src":"unittest.csv", "title":"poop"}}], "columns":[{"type":"sum","columns":[2,3,5]}, {"colnum":2}, {"colnum":4}, {"type":"diff", "diff":2, "against":3, "diffType":"percent"}, {"colnum":5}]},
+                       {"type":"text", "value":"For the last decade, the City budget has been in the red. Year after year, the annual budget did not cover expenses.  he efects of the national recession made a bad situation even worse. It also made it clear that Chicago's city budget has a structural problem, and that Chicagoans have more government than they can aford.\n\n this budget is about priorities, and this structural deicit is BOPQQPSUVOJUZUP TUBSU TIBQJOHIJDBHPT GVUVSF PX JT UIF time to take a fresh look at City government and ask the hard questions: What programs do we need? What services BSF FTTFOUJBM  PX DBO XF QSPWJEF UIF IJHIFTU RVBMJUZ TFSWJDFT as eiciently as possible?\n\n     Chicago must not put of these choices any longer. In late July, the City delivered its preliminary budget estimates for 2012, projecting a corporate fund budget shortfall between FYQFDUFE SFWFOVF BOE FYQFOTFT PG NJMMJPOIt is time to give Chicagoans an honest, balanced budget that focuses on current needs while still investing in the future.  We cannot protect the status quo by asking more from hardpressed taxpayers.  It is time to reform government in a way that provides Chicagoans with quality services and an afordable cost.\n\n     the 2012 budget proposal does not contain an increase in sales, utility or property taxes. It cuts taxes on employers to foster job growth. It makes tough choices about cutting expenses, while encouraging innovation and the reinvention of City government. It also includes some revenue increases, without which it would be impossible to eliminate the deicit while maintaining and improving the vital services that Chicagoans deserve.\n\nFor the last decade, the City budget has been in the red. Year after year, the annual budget did not cover expenses.  he efects of the national recession made a bad situation even worse. It also made it clear that Chicago's city budget has a structural problem, and that Chicagoans have more government than they can aford.\n\n this budget is about priorities, and this structural deicit is BOPQQPSUVOJUZUP TUBSU TIBQJOHIJDBHPT GVUVSF PX JT UIF time to take a fresh look at City government and ask the hard questions: What programs do we need? What services BSF FTTFOUJBM  PX DBO XF QSPWJEF UIF IJHIFTU RVBMJUZ TFSWJDFT as eiciently as possible?\n\n     Chicago must not put of these choices any longer. In late July, the City delivered its preliminary budget estimates for 2012, projecting a corporate fund budget shortfall between FYQFDUFE SFWFOVF BOE FYQFOTFT PG NJMMJPOIt is time to give Chicagoans an honest, balanced budget that focuses on current needs while still investing in the future.  We cannot protect the status quo by asking more from hardpressed taxpayers.  It is time to reform government in a way that provides Chicagoans with quality services and an afordable cost.\n\n     the 2012 budget proposal does not contain an increase in sales, utility or property taxes. It cuts taxes on employers to foster job growth. It makes tough choices about cutting expenses, while encouraging innovation and the reinvention of City government. It also includes some revenue increases, without which it would be impossible to eliminate the deicit while maintaining and improving the vital services that Chicagoans deserve.\n\nFor the last decade, the City budget has been in the red. Year after year, the annual budget did not cover expenses.  he efects of the national recession made a bad situation even worse. It also made it clear that Chicago's city budget has a structural problem, and that Chicagoans have more government than they can aford.\n\n this budget is about priorities, and this structural deicit is BOPQQPSUVOJUZUP TUBSU TIBQJOHIJDBHPT GVUVSF PX JT UIF time to take a fresh look at City government and ask the hard questions: What programs do we need? What services BSF FTTFOUJBM  PX DBO XF QSPWJEF UIF IJHIFTU RVBMJUZ TFSWJDFT as eiciently as possible?\n\n     Chicago must not put of these choices any longer. In late July, the City delivered its preliminary budget estimates for 2012, projecting a corporate fund budget shortfall between FYQFDUFE SFWFOVF BOE FYQFOTFT PG NJMMJPOIt is time to give Chicagoans an honest, balanced budget that focuses on current needs while still investing in the future.  We cannot protect the status quo by asking more from hardpressed taxpayers.  It is time to reform government in a way that provides Chicagoans with quality services and an afordable cost.\n\n     the 2012 budget proposal does not contain an increase in sales, utility or property taxes. It cuts taxes on employers to foster job growth. It makes tough choices about cutting expenses, while encouraging innovation and the reinvention of City government. It also includes some revenue increases, without which it would be impossible to eliminate the deicit while maintaining and improving the vital services that Chicagoans deserve.", "macro":"twocol"}],
+                       "subsections":[
+                       {"title":"content and subsection test, also goals and objectives class test", "subsubsections":[
+                                     {"className":"goal", "amount":3, "classValues":[
+                                     ["1","Maintain a records management program that promotes transparency, accountability and effective service delivery", ["Transcribe and post minutes from all City Council meetings in less than four weeks", "Prepare and publish timely, accurate agendas", "Effectively coordinate public hearings and the publication of related materials or documents"]],
+                                     ["2","Respond to the legislative needs of the City Council and the community in a timely and effective manner", ["Utilize technology to enhance access to online materials", "Ensure all Statements of Economic Interest (Form 700) are filed in compliance with Fair Political Practices Commission requirements"]],
+                                     ["3","Effectively adminster municipal elections and appointments to boards and commmissions", ["Ensure no challenges for clerical errors in election materials", "Conduct community outreach to enhance knowledge of - and interest in - serving on boards and commissions"]]]
+                                     }
+                   ]
+                   }
+                ]
+                },
+                {"className":"department", "classValues":["City Clerk", "To help administer the laws and services that directly affect the daily lives of our citizens by administering elections, records management, and is responsible for the legislative process of all City Council meetings. The City Clerk's Office plays a vital role in our democracy.", "The City Clerk's Office provides support to the City Council and the public by providing copies of the agendas and associated reports and documents, including posting and publishing of legal notices and scheduling public hearings. Transcription of meeting minutes, recording of ordinances and resolutions, records management, elections, and board and commission recruitments are all functions of the Clerk's Office.", ["Implemented an automated agenda management program and migrated to paperless agenda packets using Electronic Reading Devices","Posted 100 percent of the City Council and Standing Committee agendas - a total of 123 agendas - within legally required timeframes","Facilitated additional public interest to serve on Board and Commissions by using new advertising methods including placing flyers and bookmarks at various City offices and commercial businesses, Craigslist, rBlock"], "3", [
+                                     ["1","Maintain a records management program that promotes transparency, accountability and effective service delivery", ["Transcribe and post minutes from all City Council meetings in less than four weeks", "Prepare and publish timely, accurate agendas", "Effectively coordinate public hearings and the publication of related materials or documents"]],
+                                     ["2","Respond to the legislative needs of the City Council and the community in a timely and effective manner", ["Utilize technology to enhance access to online materials", "Ensure all Statements of Economic Interest (Form 700) are filed in compliance with Fair Political Practices Commission requirements"]],
+                                     ["3","Effectively adminster municipal elections and appointments to boards and commmissions", ["Ensure no challenges for clerical errors in election materials", "Conduct community outreach to enhance knowledge of - and interest in - serving on boards and commissions"]]]]
+             }
+
+
+
+
+                ]
+        }
+   ]
+}}

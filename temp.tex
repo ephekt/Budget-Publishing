@@ -1,0 +1,39 @@
+
+\nonstopmode
+\input{documentheader.tex}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{adjustbox}
+\newcommand*{\includeimg}[2][]{%
+    \begin{adjustbox}{max size={\textwidth}{\textheight}}
+        \includegraphics[#1]{#2}%
+    \end{adjustbox}
+}
+\begin{document}
+\part{Introduction}
+\section{Transmittal Letter}
+\subsection{}
+{\itshape{
+April 30, 2012 
+
+ To the Honorable Mayor and City Council: 
+
+ 2013 Fiscal Year Budget Transmittal 
+
+Dear Mayor and Council Members: 
+
+
+}}
+\subsection{Introduction and Economic Backup}
+Tonight, and in accordance with my responsibility as City Manager, I am pleased to submit the City of Palo Alto's Proposed Fiscal Year 2013 Operating Budget. As you know, since the fall of 2008, the City's General Fund has faced significant fiscal challenges.
+
+\begin{itemize}
+\item cost of living...
+\item implementing...
+\end{itemize}
+\subsection{Conclusion}
+A considerable\\
+{\includeimg[height=1in width=2in]{JamesKeeneSig.png}}
+\\James Keene, City Manager
+\section{Budget Balancing Recommendations}
+Eventually a table will go here

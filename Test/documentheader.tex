@@ -1,0 +1,78 @@
+\documentclass{book}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{anysize}
+\usepackage{tabu}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{xparse}
+\usepackage{amsfonts}
+\usepackage[autolanguage]{numprint}
+
+\setcounter{secnumdepth}{-1} 
+\definecolor{green}{rgb}{0.3,.7,0.3}
+\definecolor{blue}{rgb}{0.3, 0.3, .6}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{grey}{rgb}{.6,.6,.6}
+\marginsize{2cm}{2cm}{1cm}{1cm}
+\pagestyle{fancy}
+\setlength{\parskip}{1.5ex}
+\setlength{\parindent}{0.0in}
+
+\newcommand{\bulletl}[0]{\renewcommand{\labelitemi}{$\bullet$}}
+\newcommand{\checkl}[0]{\renewcommand{\labelitemi}{$\checkmark$}}
+\newcommand{\figurebottom}[1]{\begin{figure}[b]#1\end{figure}}
+\newcommand{\twocol}[1]{\begin{multicols}{2}{#1}\end{multicols}}
+\newcommand{\greenRow}[1]{\rowcolor{green}#1}
+\newcommand{\blueRow}[1]{\rowcolor{blue}#1}
+\newcommand{\greyRow}[1]{\rowcolor{grey}#1}
+\newcommand{\white}[1]{\color{white}#1}
+\newcommand{\none}[1]{#1}
+
+\newcommand{\noInfo}[0]{-}
+\newcommand{\num}[1]{\numprint{#1}}
+\newcommand{\percentage}[1]{\numprint{#1}\%}
+
+\newcommand{\tableTitle}[1]{\none{#1}}
+\newcommand{\colTitleRow}[1]{\greenRow{#1}}
+\newcommand{\colTitleItem}[1]{\textbf{#1}}
+\newcommand{\row}[1]{\none{#1}}
+\newcommand{\tableItem}[1]{\none{#1}}
+\newcommand{\rowTitle}[1]{\none{#1}}
+\newcommand{\sumRow}[1]{\greenRow{#1}}
+\newcommand{\subSumRow}[1]{\greyRow{#1}}
+\newcommand{\subSubSumRow}[1]{\greyRow{#1}}
+
+\newcommand{\sumItem}[1]{\none{#1}}
+\newcommand{\subSumItem}[1]{\none{#1}}
+\newcommand{\subSubSumItem}[1]{\none{#1}}
+
+\newcommand{\diffRow}[1]{\blueRow{#1}}
+\newcommand{\diffItem}[1]{\none{#1}}
+\newcommand{\diffTitle}[1]{\none{#1}}
+
+\newcommand{\sumTitle}[1]{\none{#1}}
+\newcommand{\subSumTitle}[1]{\none{#1}}
+\newcommand{\subSubSumTitle}[1]{\none{#1}}
+
+\newcommand{\subTableTitle}[1]{\textbf{#1}}
+\newcommand{\centerit}[1]{\begin{center}\itshape{#1}\end{center}}
+\NewDocumentCommand{\myrule}{O{1pt} O{3pt} O{black}}{%
+  \par\nobreak % don't break a page here
+  \kern\the\prevdepth % don't take into account the depth of the preceding line
+  \kern#2 % space before the rule
+  {\color{#3}\hrule height #1 width\hsize} % the rule
+  \kern#2 % space after the rule
+  \nointerlineskip % no additional space after the rule
+}
+\newcommand{\goalheader}[1]{#1\myrule[2pt][0pt][green]}
+
+\nprounddigits{2}
+
+%\newcommand{\goalheader}[1]{
+%{\textbf{#1\color{green}\hrule height 2pt\nointerparskip}}
+%}

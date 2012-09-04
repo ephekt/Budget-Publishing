@@ -1,0 +1,16 @@
+#Naming convention needs to be totally redone, likely. 
+
+#TODO: Images by default should at most span the whole page...
+
+#TODO: Potentially support for alternating row color
+
+#TODO: Option to not represent rows that cannot be found
+
+#TODO: Better support for column setup. Right now it's really cumbersome to do certain things, like column highlighting, text formatting, etc, even though the tools are all there to do it better.
+
+
+#TODO: Potentially support for headers, footers, etcs above and below tables
+
+#TODO: Text markup
+
+#TODO: More explicit text spacing controls?

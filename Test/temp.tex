@@ -1,0 +1,168 @@
+
+\nonstopmode
+\input{documentheader.tex}
+\usepackage{graphicx}
+\usepackage[space]{grffile}
+\usepackage{adjustbox}
+\newcommand*{\includeimg}[2][]{%
+    \begin{adjustbox}{max size={\textwidth}{\textheight}}
+        \includegraphics[#1]{#2}%
+    \end{adjustbox}
+}
+\begin{document}
+\part{Introduction}
+\section{Transmittal Letter}
+\subsection{}
+{\itshape{
+April 30, 2012 
+
+ To the Honorable Mayor and City Council: 
+
+ 2013 Fiscal Year Budget Transmittal 
+
+Dear Mayor and Council Members: 
+
+
+}}
+\subsection{Introduction and Economic Backup}
+Tonight, and in accordance with my responsibility as City Manager, I am pleased to submit the City of Palo Alto's Proposed Fiscal Year 2013 Operating Budget. As you know, since the fall of 2008, the City's General Fund has faced significant fiscal challenges.
+
+\begin{itemize}
+\bulletl
+\item cost of living...
+\item implementing...
+\end{itemize}
+\subsection{Conclusion}
+A considerable\\
+{\includeimg[height=1in, width=2in]{JamesKeeneSig.png}}
+\\James Keene, City Manager
+\section{Budget Balancing Recommendations}
+Eventually a table will go here
+\begin{longtable}{ p {2in}  p {0.5in}  p {0.5in}  p {0.5in}  p {0.5in}  p {0.5in}  p {0.5in}  p {0.5in} }
+\colTitleRow{
+\colTitleItem{}&\colTitleItem{ColTitle1}&\colTitleItem{ ColTitle2}&\colTitleItem{ ColTitle3}&\colTitleItem{ ColTitle4}&\colTitleItem{ ColTitle5}&\colTitleItem{Total}}\\
+\endhead
+\subSubSumRow{
+\subSubSumItem{\num{-28.3333333333}}&\subSubSumItem{\num{-28.4545454545}}&\subSubSumItem{\num{-22.6666666667}}&\subSubSumItem{\num{-17.4615384615}}&\subSubSumItem{\num{-12.7142857143}}&\subSubSumItem{\num{-8.3333333333}}&\subSubSumItem{\num{-117.963702964}}}\\
+\row{
+\tableItem{RowTitle2}&\tableItem{\num{6}}&\tableItem{\num{7}}&\tableItem{\num{8}}&\tableItem{\num{9}}&\tableItem{\num{10}}&\tableItem{\num{42.0}}}\\
+\row{
+\tableItem{RowTitle3}&\tableItem{\num{11}}&\tableItem{\num{12}}&\tableItem{\num{13}}&\tableItem{\num{14}}&\tableItem{\num{15}}&\tableItem{\num{68.0}}}\\
+\diffRow{
+\diffItem{\percentage{-33.3333333333}}&\diffItem{\percentage{-45.4545454545}}&\diffItem{\percentage{-41.6666666667}}&\diffItem{\percentage{-38.4615384615}}&\diffItem{\percentage{-35.7142857143}}&\diffItem{\percentage{-33.3333333333}}&\diffItem{\noInfo{}}}\\
+\row{
+\textbf{RowTitle5}&\textbf{\num{21}}&\textbf{\num{22}}&\textbf{\num{23}}&\textbf{\num{24}}&\textbf{\num{25}}&\textbf{\num{120.0}}}\\
+\sumRow{
+\sumItem{\num{10.0}}&\sumItem{\num{38.0}}&\sumItem{\num{41.0}}&\sumItem{\num{44.0}}&\sumItem{\num{47.0}}&\sumItem{\num{50.0}}&\sumItem{\num{230.0}}}\\
+\end{longtable}
+\part{More involved tests}
+\section{dual column test}
+{\figurebottom{
+\begin{longtable}{ p {0.785714285714in}  p {0.785714285714in}  p {0.785714285714in}  p {0.785714285714in}  p {0.785714285714in}  p {0.785714285714in}  p {0.785714285714in} }
+\colTitleRow{
+\tableTitle{}&\colTitleItem{Total}&\colTitleItem{ ColTitle2}&\colTitleItem{ ColTitle3}&\colTitleItem{Change}&\colTitleItem{ ColTitle5}&\colTitleItem{Total}}\\
+\endhead
+\subTableTitle{poop}\\
+\row{
+\rowTitle{RowTitle1}&\tableItem{\num{-2843.0}}&\tableItem{\num{-2342}}&\tableItem{\num{3}}&\tableItem{\percentage{-78166.6666667}}&\tableItem{\num{-504}}&\tableItem{\num{-2843.0}}}\\
+\row{
+\rowTitle{RowTitle2}&\tableItem{\num{25.0}}&\tableItem{\num{7}}&\tableItem{\num{8}}&\tableItem{\percentage{-12.5}}&\tableItem{\num{10}}&\tableItem{\num{25.0}}}\\
+\row{
+\rowTitle{RowTitle3}&\tableItem{\num{40.0}}&\tableItem{\num{12}}&\tableItem{\num{13}}&\tableItem{\percentage{-7.69230769231}}&\tableItem{\num{15}}&\tableItem{\num{40.0}}}\\
+\row{
+\rowTitle{RowTitle4}&\tableItem{\num{55.0}}&\tableItem{\num{17}}&\tableItem{\num{18}}&\tableItem{\percentage{-5.55555555556}}&\tableItem{\num{20}}&\tableItem{\num{55.0}}}\\
+\row{
+\rowTitle{RowTitle5}&\tableItem{\num{70.0}}&\tableItem{\num{22}}&\tableItem{\num{23}}&\tableItem{\percentage{-4.34782608696}}&\tableItem{\num{25}}&\tableItem{\num{70.0}}}\\
+\subSumRow{
+\rowTitle{Subtotal}&\subSumItem{\num{-2653.0}}&\subSumItem{\num{-2284.0}}&\subSumItem{\num{65.0}}&\subSumItem{\percentage{-3613.84615385}}&\subSumItem{\num{-434.0}}&\subSumItem{\num{-2653.0}}}\\
+\sumRow{
+\rowTitle{Total}&\sumItem{\num{-2653.0}}&\sumItem{\num{-2284.0}}&\sumItem{\num{65.0}}&\sumItem{\percentage{-3613.84615385}}&\sumItem{\num{-434.0}}&\sumItem{\num{-2653.0}}}\\
+\end{longtable}
+}}
+{\twocol{
+For the last decade, the City budget has been in the red. Year after year, the annual budget did not cover expenses.  he efects of the national recession made a bad situation even worse. It also made it clear that Chicago's city budget has a structural problem, and that Chicagoans have more government than they can aford.
+
+ this budget is about priorities, and this structural deicit is BOPQQPSUVOJUZUP TUBSU TIBQJOHIJDBHPT GVUVSF PX JT UIF time to take a fresh look at City government and ask the hard questions: What programs do we need? What services BSF FTTFOUJBM  PX DBO XF QSPWJEF UIF IJHIFTU RVBMJUZ TFSWJDFT as eiciently as possible?
+
+     Chicago must not put of these choices any longer. In late July, the City delivered its preliminary budget estimates for 2012, projecting a corporate fund budget shortfall between FYQFDUFE SFWFOVF BOE FYQFOTFT PG NJMMJPOIt is time to give Chicagoans an honest, balanced budget that focuses on current needs while still investing in the future.  We cannot protect the status quo by asking more from hardpressed taxpayers.  It is time to reform government in a way that provides Chicagoans with quality services and an afordable cost.
+
+     the 2012 budget proposal does not contain an increase in sales, utility or property taxes. It cuts taxes on employers to foster job growth. It makes tough choices about cutting expenses, while encouraging innovation and the reinvention of City government. It also includes some revenue increases, without which it would be impossible to eliminate the deicit while maintaining and improving the vital services that Chicagoans deserve.
+
+For the last decade, the City budget has been in the red. Year after year, the annual budget did not cover expenses.  he efects of the national recession made a bad situation even worse. It also made it clear that Chicago's city budget has a structural problem, and that Chicagoans have more government than they can aford.
+
+ this budget is about priorities, and this structural deicit is BOPQQPSUVOJUZUP TUBSU TIBQJOHIJDBHPT GVUVSF PX JT UIF time to take a fresh look at City government and ask the hard questions: What programs do we need? What services BSF FTTFOUJBM  PX DBO XF QSPWJEF UIF IJHIFTU RVBMJUZ TFSWJDFT as eiciently as possible?
+
+     Chicago must not put of these choices any longer. In late July, the City delivered its preliminary budget estimates for 2012, projecting a corporate fund budget shortfall between FYQFDUFE SFWFOVF BOE FYQFOTFT PG NJMMJPOIt is time to give Chicagoans an honest, balanced budget that focuses on current needs while still investing in the future.  We cannot protect the status quo by asking more from hardpressed taxpayers.  It is time to reform government in a way that provides Chicagoans with quality services and an afordable cost.
+
+     the 2012 budget proposal does not contain an increase in sales, utility or property taxes. It cuts taxes on employers to foster job growth. It makes tough choices about cutting expenses, while encouraging innovation and the reinvention of City government. It also includes some revenue increases, without which it would be impossible to eliminate the deicit while maintaining and improving the vital services that Chicagoans deserve.
+
+For the last decade, the City budget has been in the red. Year after year, the annual budget did not cover expenses.  he efects of the national recession made a bad situation even worse. It also made it clear that Chicago's city budget has a structural problem, and that Chicagoans have more government than they can aford.
+
+ this budget is about priorities, and this structural deicit is BOPQQPSUVOJUZUP TUBSU TIBQJOHIJDBHPT GVUVSF PX JT UIF time to take a fresh look at City government and ask the hard questions: What programs do we need? What services BSF FTTFOUJBM  PX DBO XF QSPWJEF UIF IJHIFTU RVBMJUZ TFSWJDFT as eiciently as possible?
+
+     Chicago must not put of these choices any longer. In late July, the City delivered its preliminary budget estimates for 2012, projecting a corporate fund budget shortfall between FYQFDUFE SFWFOVF BOE FYQFOTFT PG NJMMJPOIt is time to give Chicagoans an honest, balanced budget that focuses on current needs while still investing in the future.  We cannot protect the status quo by asking more from hardpressed taxpayers.  It is time to reform government in a way that provides Chicagoans with quality services and an afordable cost.
+
+     the 2012 budget proposal does not contain an increase in sales, utility or property taxes. It cuts taxes on employers to foster job growth. It makes tough choices about cutting expenses, while encouraging innovation and the reinvention of City government. It also includes some revenue increases, without which it would be impossible to eliminate the deicit while maintaining and improving the vital services that Chicagoans deserve.
+}}
+\subsection{content and subsection test, also goals and objectives class test}
+\subsubsection{Goal 1: Maintain a records management program that promotes transparency, accountability and effective service delivery}
+Objective:
+\begin{itemize}
+\bulletl
+\item Transcribe and post minutes from all City Council meetings in less than four weeks
+\item Prepare and publish timely, accurate agendas
+\item Effectively coordinate public hearings and the publication of related materials or documents
+\end{itemize}
+\subsubsection{Goal 2: Respond to the legislative needs of the City Council and the community in a timely and effective manner}
+Objective:
+\begin{itemize}
+\bulletl
+\item Utilize technology to enhance access to online materials
+\item Ensure all Statements of Economic Interest (Form 700) are filed in compliance with Fair Political Practices Commission requirements
+\end{itemize}
+\subsubsection{Goal 3: Effectively adminster municipal elections and appointments to boards and commmissions}
+Objective:
+\begin{itemize}
+\bulletl
+\item Ensure no challenges for clerical errors in election materials
+\item Conduct community outreach to enhance knowledge of - and interest in - serving on boards and commissions
+\end{itemize}
+\section{City Clerk}
+{\includeimg[width=6.5in]{City Clerk.png}}
+\subsection{Department Description}
+The City Clerk Department's Mission is:
+{\centerit{
+To help administer the laws and services that directly affect the daily lives of our citizens by administering elections, records management, and is responsible for the legislative process of all City Council meetings. The City Clerk's Office plays a vital role in our democracy.
+}}
+The City Clerk's Office provides support to the City Council and the public by providing copies of the agendas and associated reports and documents, including posting and publishing of legal notices and scheduling public hearings. Transcription of meeting minutes, recording of ordinances and resolutions, records management, elections, and board and commission recruitments are all functions of the Clerk's Office.
+\subsection{Key Accomplishments}
+\begin{itemize}
+\checkl
+\item Implemented an automated agenda management program and migrated to paperless agenda packets using Electronic Reading Devices
+\item Posted 100 percent of the City Council and Standing Committee agendas - a total of 123 agendas - within legally required timeframes
+\item Facilitated additional public interest to serve on Board and Commissions by using new advertising methods including placing flyers and bookmarks at various City offices and commercial businesses, Craigslist, rBlock
+\end{itemize}
+\newpage\subsection{Goals and Objectives}
+\subsubsection{Goal 1: Maintain a records management program that promotes transparency, accountability and effective service delivery}
+Objective:
+\begin{itemize}
+\bulletl
+\item Transcribe and post minutes from all City Council meetings in less than four weeks
+\item Prepare and publish timely, accurate agendas
+\item Effectively coordinate public hearings and the publication of related materials or documents
+\end{itemize}
+\subsubsection{Goal 2: Respond to the legislative needs of the City Council and the community in a timely and effective manner}
+Objective:
+\begin{itemize}
+\bulletl
+\item Utilize technology to enhance access to online materials
+\item Ensure all Statements of Economic Interest (Form 700) are filed in compliance with Fair Political Practices Commission requirements
+\end{itemize}
+\subsubsection{Goal 3: Effectively adminster municipal elections and appointments to boards and commmissions}
+Objective:
+\begin{itemize}
+\bulletl
+\item Ensure no challenges for clerical errors in election materials
+\item Conduct community outreach to enhance knowledge of - and interest in - serving on boards and commissions
+\end{itemize}
+\end{document}
